@@ -9,9 +9,9 @@ jobs:
     - name: Setup Java 17 and maven 
       uses: actions/setup-java@v4
       with:
-      distribution: 'temurin'
-      java-version: '17'
-      cache: 'maven'
+        distribution: 'temurin'
+        java-version: '17'
+        cache: 'maven'
     - name: Build with Maven cloud
       run:  mvn -B verify sonar:sonar -Dsonar.projectKey=sonar-demo-17_project-sonar -Dsonar.organization=sonar-demo-17 -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN
       env:
